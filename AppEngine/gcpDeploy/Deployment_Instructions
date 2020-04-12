@@ -1,0 +1,37 @@
+1) Add the following dependency in pom.xml
+<plugin>
+    <groupId>com.google.cloud.tools</groupId>
+    <artifactId>appengine-maven-plugin</artifactId>
+    <version>1.3.2</version>
+</plugin>
+
+2) Inside the directory src—>main, create a folder namely appengine. Inside appengine folder, create a file namely app.yaml. So the structure would be
+
+Project—>src—>main—>appengine—>app.yaml(file)
+
+3) The content of app.yaml would be 
+
+runtime: java
+env: flex
+
+handlers:
+- url: /.*
+  script: this field is required, but ignored
+
+4) Now login into your GCP console and create a project where you want your Java application to be deployed.
+
+5) Now login into gcloud SDK and set your project path by doing gcloud init command.
+
+6) Once your gcloud SDK project is set, go to your Eclipse and build your maven project by doing mvn build command.
+
+7) Your aap engine project SHOULD BE created in GCP console before proceeding further.Select the language for your app engine application.
+
+8) After your project is build, go to run configurations and create a new configuration. The goals for that configuration will be
+
+appengine:deploy -DcloudSdkPath="/Users/saurabh/Downloads/Google_Cloud_SDK/google-cloud-sdk"
+
+Where -DcloudSdkPath would be path of gcloud SDK on your machine. You can find the path by firing the command: $(gcloud --format='value(installation.sdk_root)' info)
+
+9) Now the system will start deploying your Java application on your GCP app engine, it may take several minutes.
+
+10) Once done, you can find your deployed application under App Engine—>Services. It will also provide you with URL to access your application.
