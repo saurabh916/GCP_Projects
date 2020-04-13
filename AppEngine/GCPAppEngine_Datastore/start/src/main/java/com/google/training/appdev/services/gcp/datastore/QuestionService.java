@@ -110,26 +110,14 @@ public class QuestionService {
 
     public List<Question> getAllQuestions(String quiz){
 
-  // TODO: Create the query
-  // The Query class has a static newEntityQueryBuilder()
-  // method that allows you to specify the kind(s) of
-  // entities to be retrieved.
-  // The query can be customized to filter the Question
-  // entities for one quiz.
 
-  Query<Entity> query = Query.newEntityQueryBuilder()
-              .setKind(ENTITY_KIND)
-              .setFilter(StructuredQuery.PropertyFilter.eq(
-                      Question.QUIZ, quiz))
-              .build();
 
-  // END TODO
+
 
  // TODO: Execute the query
  // The datastore.run(query) method returns an iterator
  // for entities
 
-Iterator<Entity> entities = datastore.run(query);
 
  // END TODO
 
@@ -137,14 +125,14 @@ Iterator<Entity> entities = datastore.run(query);
  // Use the buildQuestions(entities) method to convert
  // from Datastore entities to domain objects
 
-        return buildQuestions(entities);
+         return null;
 
  // END TODO
 
     }
 
 
-
+/* TODO: Uncomment this block
 
     private List<Question> buildQuestions(Iterator<Entity> entities){
         List<Question> questions = new ArrayList<>();
@@ -166,5 +154,5 @@ Iterator<Entity> entities = datastore.run(query);
                 .build();
     }
 
-
+*/
 }
