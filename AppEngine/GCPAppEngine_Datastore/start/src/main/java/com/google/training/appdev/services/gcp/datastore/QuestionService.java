@@ -108,5 +108,59 @@ public class QuestionService {
 // END TODO
     }
 
+    public List<Question> getAllQuestions(String quiz){
 
+
+
+ // TODO: Create the query
+ // The Query class has a static newEntityQueryBuilder()
+ // method that allows you to specify the kind(s) of
+ // entities to be retrieved.
+ // The query can be customized to filter the Question
+ // entities for one quiz.
+
+
+ // END TODO
+
+ // TODO: Execute the query
+ // The datastore.run(query) method returns an iterator
+ // for entities
+
+
+ // END TODO
+
+ // TODO: Return the transformed results
+ // Use the buildQuestions(entities) method to convert
+ // from Datastore entities to domain objects
+
+
+
+ // END TODO
+
+    }
+
+
+/* TODO: Uncomment this block
+
+    private List<Question> buildQuestions(Iterator<Entity> entities){
+        List<Question> questions = new ArrayList<>();
+        entities.forEachRemaining(entity-> questions.add(entityToQuestion(entity)));
+        return questions;
+    }
+
+    private Question entityToQuestion(Entity entity){
+        return new Question.Builder()
+                .withQuiz(entity.getString(Question.QUIZ))
+                .withAuthor(entity.getString(Question.AUTHOR))
+                .withTitle(entity.getString(Question.TITLE))
+                .withAnswerOne(entity.getString(Question.ANSWER_ONE))
+                .withAnswerTwo(entity.getString(Question.ANSWER_TWO))
+                .withAnswerThree(entity.getString(Question.ANSWER_THREE))
+                .withAnswerFour(entity.getString(Question.ANSWER_FOUR))
+                .withCorrectAnswer(entity.getLong(Question.CORRECT_ANSWER))
+                .withId(entity.getKey().getId())
+                .build();
+    }
+
+*/
 }
