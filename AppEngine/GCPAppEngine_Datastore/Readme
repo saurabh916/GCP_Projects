@@ -69,3 +69,8 @@ public class QuestionService {
 
 
     }
+    
+    
+    4) Go the Quiz application and add few entities.
+    
+    5) Afer saving the values, check the Cloud Datastore tab in your GCP, it should reflect the added entities.
