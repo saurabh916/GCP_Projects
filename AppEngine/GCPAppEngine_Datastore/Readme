@@ -1,0 +1,71 @@
+1) Go to start folder and build the application by executing "mvn clean install" command.
+
+2) Run the Quiz application by executing "mvn spring-boot:run" command. Preview the application from GCP cloud shell by 
+previewing on port 8080.
+
+3) Check the file start/src/main/java/com/google/training/appdev/services/gcp/QuestionService.java. Configuration to add entity into 
+Datastore is configured here
+
+@Service
+public class QuestionService {
+
+  // Create a Datastore client object, datastore
+  // The DatastoreOptions class has a getDefaultInstance()
+  // static method.
+  // Use the getService() method of the DatastoreOptions
+  // object to get the Datastore client
+
+    private Datastore datastore =
+    DatastoreOptions.getDefaultInstance().getService();
+
+ 
+
+  //  Declare a static final String named kind
+  //The Datastore key is the equivalent of a primary key in a // relational database.
+  // There are two main ways of writing a key:
+  // 1. Specify the kind, and let Datastore generate a unique //    numeric id
+  // 2. Specify the kind and a unique string id
+
+  private static final String ENTITY_KIND = "Question";
+
+ 
+
+  // Create a KeyFactory for Question entities
+
+  private final KeyFactory keyFactory =
+            datastore.newKeyFactory().setKind(ENTITY_KIND);
+
+ 
+
+// The createQuestion(Question question) method
+// is passed a Question object using data from the form
+// Extract the form data and add it to Datastore
+
+
+
+    public Key createQuestion(Question question) {
+
+
+  Key key = datastore.allocateId(keyFactory.newKey());
+
+
+  Entity questionEntity = Entity.newBuilder(key)
+      .set(Question.QUIZ, question.getQuiz())
+      .set(Question.AUTHOR, question.getAuthor())
+      .set(Question.TITLE, question.getTitle())
+      .set(Question.ANSWER_ONE,question.getAnswerOne())
+      .set(Question.ANSWER_TWO, question.getAnswerTwo())
+      .set(Question.ANSWER_THREE,question.getAnswerThree())
+      .set(Question.ANSWER_FOUR, question.getAnswerFour())
+      .set(Question.CORRECT_ANSWER,
+                              question.getCorrectAnswer())
+      .build();
+
+
+  datastore.put(questionEntity);
+
+
+      return key;
+
+
+    }
