@@ -1,0 +1,9 @@
+This Deployment Manager file can be used to create a sql instance using Jinja template
+
+1)  Download the deployment manager file create-sql-instance.jinja
+2)  Go the the location of the deployment manager file and run it by using the command "gcloud deployment-manager deployments
+    create <your deployment name> --template=create-sql-instance.jinja
+3)  The process will take some time, after couple of minutes, go and check whether a new cloud sql instance is created.
+4)  The deployment details can be checked using the command "gcloud deployment-manager deployments describe <your deployment name>
+5)  The deployment file along with the resources it created, can be deleted by using the command "gcloud deployment-manager
+    deployments delete <your deployment name> --delete-policy=DELETE
