@@ -4,15 +4,11 @@ metadata:
   name: producer
   labels:
     name: producer-pod
-    app:  producer-consumer-app
-spec: 
+    app: producer-consumer-app
+spec:
   containers:
   - name: emp-producer
-    image:  gcr.io/learning-274011/emp-producer:v1.0
+    image: gcr.io/learning-274011/emp-producer:v1.0
     ports:
-       -containerPort: 80
-    resources:
-      limits:
-        cpu: 0.2
-        memory: "10Mi"
+         - containerPort: 80
        
