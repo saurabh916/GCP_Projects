@@ -1,14 +1,13 @@
-  apiVersion: v1
-  kind: Pod
-  metadata:
-   name: consumer
-   labels:
-     name: consumer-pod
-     app:  producer-consumer-app
-    
-  spec: 
-    containers:
-     - name: emp-consumer
-       image:  gcr.io/learning-274011/emp-consumer:v1.0
-       ports:
-       -containerPort: 80
+apiVersion: v1
+kind: Pod
+metadata:
+  name: consumer
+  labels:
+    name: consumer-pod
+    app: producer-consumer-app
+spec:
+  containers:
+  - name: emp-consumer
+    image: gcr.io/learning-274011/emp-consumer:v1.0
+    ports:
+         - containerPort: 80
