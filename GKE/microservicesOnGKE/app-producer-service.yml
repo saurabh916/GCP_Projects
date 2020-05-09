@@ -1,0 +1,15 @@
+  apiVersion: v1
+  kind: Service 
+  metadata:
+    name: producer
+    labels: 
+      name: producer-service
+      app:  producer-consumer-app
+ 
+  spec: 
+    ports:
+    - port: 8081
+      targetPort: 8081
+    selector: 
+      name: producer-pod
+      app:  producer-consumer-app
