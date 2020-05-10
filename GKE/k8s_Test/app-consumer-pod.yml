@@ -8,6 +8,6 @@ metadata:
 spec:
   containers:
   - name: emp-consumer
-    image: gcr.io/learning-274011/k8stest
+    image: gcr.io/learning-274011/k8stest:v1.0
     ports:
          - containerPort: 80
