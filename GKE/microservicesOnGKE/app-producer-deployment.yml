@@ -13,7 +13,7 @@ spec:
     metadata:
       labels:
         name: producer
-        app: producer-consumer-app
+        app: producer
     spec:
       containers:
       - name: emp-producer
