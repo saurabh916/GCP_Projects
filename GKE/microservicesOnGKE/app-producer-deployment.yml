@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: producer-deployment
+  labels:
+    app: producer-consumer-app
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: producer-consumer-app
+  template:
+    metadata:
+      labels:
+        name: producer
+        app: producer-consumer-app
+    spec:
+      containers:
+      - name: emp-producer
+        image: gcr.io/learning-274011/emp-producer:v2.0
+        ports:
+        - containerPort: 80
