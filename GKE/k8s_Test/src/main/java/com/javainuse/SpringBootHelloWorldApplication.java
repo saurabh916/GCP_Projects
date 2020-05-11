@@ -16,7 +16,7 @@ public class SpringBootHelloWorldApplication {
     
     @RequestMapping(value="/kubernetestest")
     public String testApp(){
-    	return "Hi there, this is for K8s";
+    	return "Hi there, this is for K8s after modification";
     }
   
 }
