@@ -13,7 +13,7 @@ public class ConsumerControllerClient {
 
 	public void getEmployee() throws RestClientException, IOException {
 
-		String baseUrl = "http://producer";
+		String baseUrl = "http://localhost:8081/";
 		RestTemplate restTemplate = new RestTemplate();
 		ResponseEntity<String> response=null;
 		try{
