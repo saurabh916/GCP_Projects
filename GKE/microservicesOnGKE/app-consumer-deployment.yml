@@ -17,6 +17,6 @@ spec:
     spec:
       containers:
       - name: emp-consumer
-        image: gcr.io/learning-274011/emp_consumer:v2.0
+        image: gcr.io/learning-274011/emp-consumer:v3.0
         ports:
         - containerPort: 80
