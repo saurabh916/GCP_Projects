@@ -4,13 +4,11 @@
 }
 {\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\csgray\c0\c0;\cssrgb\c80000\c80000\c80000;
 }
-\paperw11900\paperh16840\margl1440\margr1440\vieww25400\viewh16000\viewkind0
+\paperw11900\paperh16840\margl1440\margr1440\vieww25400\viewh14580\viewkind0
 \deftab720
 \pard\pardeftab720\sl300\partightenfactor0
 
 \f0\fs26 \cf2 \cb3 \expnd0\expndtw0\kerning0
-\outl0\strokewidth0 \strokec4 cat > ~/gcf-vm-metadata/main.py <<'EOF'\
-\
 import base64\
 import json\
 \
@@ -67,5 +65,4 @@ def _update_metadata(vm_meta, key, value):\
         'key': key,\
         'value': value\
     \})\
-\
-EOF}
+}
